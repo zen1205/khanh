@@ -1,0 +1,9 @@
+[Script]
+# ~ By khanh
+# ～ Egern transfer to Shadowrocket & Surge & LanceX
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/zen1205/khanh/main/khanh.js, requires-body=true, max-size=-1, timeout=60
+
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/zen1205/khanh/main/khanh1.js, timeout=60
+
+[MITM]
+hostname = %APPEND% api.revenuecat.com
